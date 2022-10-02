@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { authActions } from '../store';
+import { authActions } from '../store/auth-slice';
 import { useDispatch } from 'react-redux';
 
 const Button = styled.button`

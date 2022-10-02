@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { counterActions } from './../store/index';
+import { counterActions } from '../store/counter-slice';
 
 const CounterDiv = styled.div`
     width: 90rem;

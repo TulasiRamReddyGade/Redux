@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import { authActions, counterActions } from '../store';
+import { authActions } from '../store/auth-slice';
+import { counterActions } from '../store/counter-slice';
 
 const Formf = styled.form`
     width: 50rem;
