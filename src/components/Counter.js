@@ -54,11 +54,11 @@ const Counter = () => {
     // const [toggle, toggleCounter] = useState(false);
     const value = useSelector((state) => {
         // console.log(state.counter);
-        return state.counter;
+        return state.counter.counter;
     });
     const showCounter = useSelector((state) => {
         // console.log(state);
-        return state.showCounter;
+        return state.counter.showCounter;
     });
     const inputRef = useRef();
     const dispatch = useDispatch();
