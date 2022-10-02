@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { counterActions } from './../store/index';
 
 const CounterDiv = styled.div`
     width: 90rem;
@@ -51,20 +52,26 @@ const InputNumber = styled.input`
 
 const Counter = () => {
     // const [toggle, toggleCounter] = useState(false);
-    const value = useSelector((state) => state.counter);
-    const showCounter = useSelector((state) => state.showCounter);
+    const value = useSelector((state) => {
+        // console.log(state.counter);
+        return state.counter;
+    });
+    const showCounter = useSelector((state) => {
+        // console.log(state);
+        return state.showCounter;
+    });
     const inputRef = useRef();
     const dispatch = useDispatch();
     const toogleHandler = () => {
-        dispatch({ type: 'counter', showCounter: false });
+        dispatch(counterActions.toggleCounter());
     };
 
     const IncrHandler = () => {
-        dispatch({ type: 'incr', val: parseInt(inputRef.current.value) });
+        dispatch(counterActions.increase(parseInt(inputRef.current.value)));
     };
 
     const DecrHandler = () => {
-        dispatch({ type: 'decr', val: parseInt(inputRef.current.value) });
+        dispatch(counterActions.decrease(parseInt(inputRef.current.value)));
     };
 
     // console.log(toggle);
